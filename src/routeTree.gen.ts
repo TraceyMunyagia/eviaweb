@@ -10,6 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GetAQuoteRouteImport } from './routes/get-a-quote'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
@@ -17,6 +20,21 @@ import { Route as PortfolioRouteImport } from './routes/portfolio'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetAQuoteRoute = GetAQuoteRouteImport.update({
+  id: '/get-a-quote',
+  path: '/get-a-quote',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
@@ -37,12 +55,18 @@ const PortfolioRoute = PortfolioRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/get-a-quote': typeof GetAQuoteRoute
   '/how-it-works': typeof HowItWorksRoute
   '/packages': typeof PackagesRoute
   '/portfolio': typeof PortfolioRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/get-a-quote': typeof GetAQuoteRoute
   '/how-it-works': typeof HowItWorksRoute
   '/packages': typeof PackagesRoute
   '/portfolio': typeof PortfolioRoute
@@ -50,20 +74,48 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/get-a-quote': typeof GetAQuoteRoute
   '/how-it-works': typeof HowItWorksRoute
   '/packages': typeof PackagesRoute
   '/portfolio': typeof PortfolioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/how-it-works' | '/packages' | '/portfolio'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/get-a-quote'
+    | '/how-it-works'
+    | '/packages'
+    | '/portfolio'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/how-it-works' | '/packages' | '/portfolio'
-  id: '__root__' | '/' | '/how-it-works' | '/packages' | '/portfolio'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/get-a-quote'
+    | '/how-it-works'
+    | '/packages'
+    | '/portfolio'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/get-a-quote'
+    | '/how-it-works'
+    | '/packages'
+    | '/portfolio'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  GetAQuoteRoute: typeof GetAQuoteRoute
   HowItWorksRoute: typeof HowItWorksRoute
   PackagesRoute: typeof PackagesRoute
   PortfolioRoute: typeof PortfolioRoute
@@ -76,6 +128,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-a-quote': {
+      id: '/get-a-quote'
+      path: '/get-a-quote'
+      fullPath: '/get-a-quote'
+      preLoaderRoute: typeof GetAQuoteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-it-works': {
@@ -104,6 +177,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  GetAQuoteRoute: GetAQuoteRoute,
   HowItWorksRoute: HowItWorksRoute,
   PackagesRoute: PackagesRoute,
   PortfolioRoute: PortfolioRoute,

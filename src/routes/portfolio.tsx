@@ -1,0 +1,6 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { FinalCta, PageIntro } from "@/components/page-parts";
+import { ProjectGrid } from "@/components/project-showcase";
+
+export const Route = createFileRoute("/portfolio")({ head: () => ({ meta: [{ title: "Portfolio — Evia Web" },{ name:"description",content:"Explore websites and digital products created by Evia Web for growing businesses."},{ property:"og:title",content:"Portfolio — Evia Web"},{property:"og:description",content:"Selected website design work by Evia Web."},{property:"og:type",content:"website"},{property:"og:url",content:"/portfolio"},{name:"twitter:card",content:"summary_large_image"}],links:[{rel:"canonical",href:"/portfolio"}]}), component: Portfolio });
+function Portfolio(){return <><PageIntro eyebrow="Selected work" title="Websites designed to earn attention—and trust." text="A selection of digital experiences shaped around each business, its audience and its goals."/><section className="py-20 md:py-28"><div className="section-shell"><ProjectGrid/></div></section><FinalCta/></>}

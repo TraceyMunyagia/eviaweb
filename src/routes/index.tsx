@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
     { property: "og:title", content: "Evia Web — Websites for Growing Businesses" },
     { property: "og:description", content: "Professional websites, SEO and digital presence for small and growing businesses in Kenya." },
     { property: "og:type", content: "website" }, { property: "og:url", content: "/" }, { name: "twitter:card", content: "summary_large_image" },
-  ], links: [{ rel: "canonical", href: "/" }], scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "ProfessionalService", name: "Evia Web", email: "eviake@gmail.com", telephone: "+254796675566", areaServed: "Kenya", serviceType: ["Website design", "SEO", "Website care"] }) }] }),
+  ], links: [{ rel: "canonical", href: "/" }], scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "ProfessionalService", name: "Evia Web", email: "eviake@gmail.com", telephone: "+254759976682", areaServed: "Kenya", serviceType: ["Website design", "SEO", "Website care"] }) }] }),
   component: Home,
 });
 

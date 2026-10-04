@@ -12,8 +12,8 @@ export function FinalCta() {
 
 export type Package = { name: string; price: string; pages: string; revisions: string; timeline: string; popular?: boolean };
 export const packages: Package[] = [
-  { name: "Starter", price: "KSh 8,000", pages: "Up to 4 pages", revisions: "1 revision", timeline: "4–5 business days" },
-  { name: "Growth", price: "KSh 16,000", pages: "Up to 7 pages", revisions: "2 revisions", timeline: "6–8 business days", popular: true },
+  { name: "Starter", price: "KSh 12,000", pages: "Up to 4 pages", revisions: "1 revision", timeline: "4–5 business days" },
+  { name: "Growth", price: "KSh 24,000", pages: "Up to 7 pages", revisions: "2 revisions", timeline: "6–8 business days", popular: true },
   { name: "Premium", price: "KSh 32,000", pages: "7+ pages", revisions: "4 revisions", timeline: "10–14 business days" },
 ];
 const common = ["Domain", "Hosting", "SSL", "Responsive design", "Basic SEO", "WhatsApp button", "Basic analytics", "Deployment"];

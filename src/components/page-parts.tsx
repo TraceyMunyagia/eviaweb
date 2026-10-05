@@ -84,7 +84,13 @@ const common = [
   "Basic analytics",
   "Deployment",
 ];
-export function PackageCards({ compact = false }: { compact?: boolean }) {
+export function PackageCards({
+  compact = false,
+  showPrices = true,
+}: {
+  compact?: boolean;
+  showPrices?: boolean;
+}) {
   return (
     <div className="grid gap-5 lg:grid-cols-3">
       {packages.map((p) => (
@@ -102,7 +108,7 @@ export function PackageCards({ compact = false }: { compact?: boolean }) {
           >
             {p.name}
           </p>
-          <h3 className="mt-3 text-4xl">{p.price}</h3>
+          {showPrices && <h3 className="mt-3 text-4xl">{p.price}</h3>}
           {!compact && (
             <ul
               className={`mt-7 space-y-3 text-sm ${p.popular ? "text-primary-foreground/75" : "text-muted-foreground"}`}
